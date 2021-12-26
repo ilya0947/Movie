@@ -21,7 +21,7 @@ export default class App extends React.Component {
 		fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${req}${type !== 'all' ? `&type=${type}` : ''}`)
 			.then(res => res.json())
 			.then(data => this.setState({mov: data.Search, loading: false}))
-			.catch(err => alert(err));
+			.catch(err => {alert(err); this.setState({loading: false})});
 	}
 
 	search=(str, type)=> {
