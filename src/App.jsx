@@ -13,14 +13,15 @@ export default class App extends React.Component {
 	};
 
 	componentDidMount() {
-		this.requestMovies(); // function
+		this.requestMovies();
 	}
 
 	requestMovies(req, type = 'all') {
 		if (!req) req = 'all';
-		fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${req}${type !== 'all' ? `&type=${type}` : ''}`)
+		fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${req}${type !== 'all' ? `&type=${type}` : ''}`)
 			.then(res => res.json())
-			.then(data => this.setState({mov: data.Search, loading: false}));
+			.then(data => this.setState({mov: data.Search, loading: false}))
+			.catch(err => alert(err));
 	}
 
 	search=(str, type)=> {
