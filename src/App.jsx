@@ -13,7 +13,7 @@ export default class App extends React.Component {
 	};
 
 	componentDidMount() {
-		this.requestMovies();
+		this.requestMovies(); // function
 	}
 
 	requestMovies(req, type = 'all') {
