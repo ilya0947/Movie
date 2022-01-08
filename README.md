@@ -1,3 +1,3 @@
 # React Movies
 
-[demo](https://ilya0947.github.io/Movie/)
+[demo](https://ilya0947.github.io/React-Movie/)
